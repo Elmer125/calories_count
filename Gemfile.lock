@@ -304,6 +304,7 @@ DEPENDENCIES
   rails (~> 7.0.4)
   ransack (~> 3.2)
   redis (~> 4.0)
+  ruby-vips
   sassc-rails
   selenium-webdriver
   simple_form
