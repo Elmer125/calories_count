@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'statitics', to: 'statitics#graph'
   get '/search', to: 'search#index'
   devise_for :users, controllers: {
     sessions: 'users/sessions',
