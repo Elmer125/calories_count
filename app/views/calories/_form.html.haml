@@ -1,0 +1,12 @@
+-# frozen_string_literal: true
+= simple_form_for(@calory) do |f|
+  = f.error_notification
+  = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
+
+  .form-inputs
+    = f.input :calories_number,required: true
+    = f.input :burned_or_consumed,collection: Calorie.burned_or_consumeds.keys.to_a
+    = f.input :comment, required: true
+
+  .form-actions
+    = f.button :submit, class: 'btn btn-primary mt-2'

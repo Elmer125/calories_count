@@ -1,0 +1,6 @@
+%p{:style => "color: green"}= notice
+.container
+  = render @calory
+  .btn-group
+    = link_to "Edit this calorie", edit_calory_path(@calory), class:"btn btn-primary"
+    = link_to "Back to calories", calories_path, class:"btn btn-secondary ms-1"

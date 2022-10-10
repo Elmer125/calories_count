@@ -1,0 +1,8 @@
+.container
+  %h1 Editing calorie
+  = render "form", calory: @calory
+  %br/
+  %div
+    = link_to "Show this calorie", @calory, class:"btn btn-warning"
+    |
+    \#{link_to "Back to calories", calories_path, class:"btn btn-secondary"}

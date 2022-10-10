@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  calories_number: 1
+  burned_or_consumed: 1
+  comment: MyText
+
+two:
+  calories_number: 1
+  burned_or_consumed: 1
+  comment: MyText
