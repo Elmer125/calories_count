@@ -73,10 +73,19 @@ group :test do
 end
 
 gem 'annotate', '~> 3.2'
+# la gema de bootstrap interfiere con jquery, se debe quitar el js de bootstrap
 gem 'bootstrap'
 gem 'hamlit'
 gem 'jquery-rails'
 gem 'sassc-rails'
 gem 'simple_form'
 
-gem "kaminari", "~> 1.2"
+gem 'kaminari', '~> 1.2'
+
+gem 'devise', '~> 4.8'
+
+gem 'ransack', '~> 3.2'
+
+gem 'chartkick', '~> 4.2'
+
+gem 'groupdate', '~> 6.1'

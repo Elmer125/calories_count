@@ -19,8 +19,10 @@
 
       </ul>
         <ul class="navbar-nav">
-
-
+        <% if current_user %>
+            <%= render 'search/form' %>
+        <% end %>
+          <%= render "user/session_manager"%>
         </ul>
 
     </div>

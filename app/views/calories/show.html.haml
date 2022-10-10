@@ -4,3 +4,6 @@
   .btn-group
     = link_to "Edit this calorie", edit_calory_path(@calory), class:"btn btn-primary"
     = link_to "Back to calories", calories_path, class:"btn btn-secondary ms-1"
+  .btn-group.ms-1
+    =link_to "Destroy", @calory, method: :delete, data: { confirm: "Are you sure?" }, class:"btn btn-danger"
+

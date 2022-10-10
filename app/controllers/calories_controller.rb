@@ -1,9 +1,10 @@
 class CaloriesController < ApplicationController
   before_action :set_calory, only: %i[show edit update destroy]
-
+  before_action :authenticate_user!
   # GET /calories or /calories.json
   def index
-    @calories = Calorie.all.page(params[:page])
+    @total_records = Calorie.where(user_id: current_user.id).count
+    @calories = Calorie.where('user_id=(?)', current_user.id).order(updated_at: :desc).page(params[:page])
   end
 
   # GET /calories/1 or /calories/1.json
@@ -20,7 +21,7 @@ class CaloriesController < ApplicationController
   # POST /calories or /calories.json
   def create
     @calory = Calorie.new(calory_params)
-
+    @calory.user = current_user
     respond_to do |format|
       if @calory.save
         format.html { redirect_to calory_url(@calory), notice: 'Calorie was successfully created.' }
