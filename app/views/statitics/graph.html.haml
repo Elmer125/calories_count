@@ -1,4 +1,8 @@
-%h1 Daily Statistics
-%p Consumed vs Burned
+%h1.text-center Daily Statistics
+
+.d-flex.justify-content-start
+    = image_tag(current_user.avatar_thumbnail)
+%h2
+    = current_user.name
 %div
 = line_chart @calories_graph, colors: ["#dc3545","#198754"]

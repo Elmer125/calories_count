@@ -10,6 +10,7 @@
       <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
     <% end %>
     <%= f.input :name, required: true %>
+    <%= f.input :avatar, as: :file, class:"mt-2" %>
     <%= f.input :password,
                 hint: "leave it blank if you don't want to change it",
                 required: false,
