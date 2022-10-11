@@ -9,7 +9,10 @@
                 autofocus: true,
                 input_html: { autocomplete: "email" }%>
     <%= f.input :name, required: true  %>
-    <%= f.input :avatar, as: :file, class:"mt-2"%>
+    <div class="field">
+      <%= f.label :avatar %>
+      <%= f.file_field :avatar %>
+    </div>
     <%= f.input :password,
                 required: true,
                 hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
