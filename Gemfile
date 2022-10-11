@@ -92,3 +92,4 @@ gem 'chartkick', '~> 4.2'
 gem 'groupdate', '~> 6.1'
 
 gem 'aws-sdk-s3', require: false
+gem 'ruby-vips', '~> 2.1', '>= 2.1.4'
