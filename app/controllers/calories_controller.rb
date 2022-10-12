@@ -1,6 +1,8 @@
 class CaloriesController < ApplicationController
   before_action :set_calory, only: %i[show edit update destroy]
   before_action :authenticate_user!
+  before_action :correct_user, only: %i[show edit update destroy]
+
   # GET /calories or /calories.json
   def index
     @total_records = Calorie.where(user_id: current_user.id).count
@@ -66,5 +68,10 @@ class CaloriesController < ApplicationController
   # Only allow a list of trusted parameters through.
   def calory_params
     params.require(:calorie).permit(:calories_number, :burned_or_consumed, :comment)
+  end
+
+  def correct_user
+    @calories = Calorie.find(params[:id]).user_id == current_user.id
+    redirect_to calories_path, alert: 'User Not Authorized' unless @calories
   end
 end
