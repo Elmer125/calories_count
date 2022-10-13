@@ -55,6 +55,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'letter_opener'
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem 'hamlit-rails'
   gem 'web-console'
@@ -90,5 +91,6 @@ gem 'ransack', '~> 3.2'
 gem 'chartkick', '~> 4.2'
 
 gem 'groupdate', '~> 6.1'
-# para heroku
-gem 'ruby-vips', '2.0.17'
+
+gem 'aws-sdk-s3', require: false
+gem 'sendgrid-ruby'
