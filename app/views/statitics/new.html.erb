@@ -1,6 +1,0 @@
-﻿<h1>Ingresa el email a donde quieres enviar tu grafica</h1>
-<%= form_with(url:share_graph_path , method: :post ) do  |f|%>
-    <%= f.label :email %>
-    <%= f.text_field :email %>
-    <%= f.submit "Enviar" %>
-<% end %>
