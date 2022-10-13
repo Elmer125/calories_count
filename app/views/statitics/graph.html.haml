@@ -1,8 +1,11 @@
 %h1.text-center Daily Statistics
 
 .d-flex.justify-content-start
-    = image_tag(current_user.avatar_thumbnail)
+    = image_tag(@user.avatar_thumbnail)
+
+
 %h2
-    = current_user.name
+    = @user.name
 %div
 = line_chart @calories_graph, colors: ["#198754","#dc3545"]
+= link_to "share grap", statitics_new_path, class: "btn btn-primary mt-1" if current_user
