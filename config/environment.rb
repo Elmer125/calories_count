@@ -7,8 +7,8 @@ Rails.application.initialize!
 ActionMailer::Base.smtp_settings = {
   user_name: Rails.application.credentials.config[:SENDGRID_USERNAME],
   password: Rails.application.credentials.config[:SENDGRID_PASSWORD],
-  domain: 'gmail.com',
-  address: 'smtp.gmail.com',
+  domain: 'heroku.com',
+  address: 'smtp.sendgrid.net',
   port: 587,
   authentication: :plain,
   enable_starttls_auto: true

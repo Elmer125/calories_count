@@ -1,4 +1,5 @@
 class StatiticsMailer < ApplicationMailer
+  default from: 'elmermarulanda5@gmail.com'
   def sign_in_mail(email_link)
     @token = email_link.token
     @email = email_link.email
