@@ -1,5 +1,5 @@
 class StatiticsController < ApplicationController
-  # before_action :authenticate_user!
+  before_action :authenticate_user!, only: %i[new create]
   def graph
     id = params[:user_id] || current_user.id
     @user = User.find(id)
