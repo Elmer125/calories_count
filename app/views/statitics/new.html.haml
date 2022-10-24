@@ -1,5 +1,4 @@
-﻿%h1 Ingresa el email a donde quieres enviar tu grafica
-
+﻿%h1 write the email to who do you send the graphic
 = simple_form_for(@share_graph) do |f|
   = f.error_notification
   = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
@@ -8,7 +7,7 @@
     = f.input :email,required: true
 
   .form-actions
-    = f.submit "Share grap", class: 'btn btn-primary mt-2'
+    = f.submit "Share graph", class: 'btn btn-primary mt-2'
     = link_to "Back", statitics_path, class: 'btn btn-secondary mt-2'
 
 

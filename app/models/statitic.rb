@@ -1,6 +1,7 @@
 class Statitic < ApplicationRecord
   belongs_to :user
   validates :email, presence: true, format: { with: URI::MailTo::EMAIL_REGEXP }
+  #, on: :create
   after_create :send_email
 
   def self.generate(email, user_id)
