@@ -1,4 +1,5 @@
 %h1.text-center= pluralize(@total_results, "Result")
+= paginate @calories
 .container.row.row-cols-4
   - @calories.each do |calory|
     %div{:class => "col card text-white #{calory.burned_or_consumed =="burned" ? "bg-success" : "bg-danger"} mb-3 border", :style => "max-width: 18rem;"}

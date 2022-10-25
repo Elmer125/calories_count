@@ -5,6 +5,7 @@
     .w-100.d-none.d-md-block
     .col.offset-md-4.mb-2
       = link_to 'New Calorie', new_calory_path, class:"btn btn-primary"
+= paginate @calories
 #calories.container.row.row-cols-4
   - @calories.each do |calory|
     %div{:class => "col card text-white #{calory.burned_or_consumed =="burned" ? "bg-success" : "bg-danger"} mb-3 border", :style => "max-width: 18rem;"}
