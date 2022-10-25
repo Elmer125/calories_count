@@ -1,6 +1,6 @@
 class Calorie < ApplicationRecord
   enum burned_or_consumed: %i[burned consumed]
-  belongs_to :user
+  belongs_to :user, counter_cache: true
   validates :calories_number, presence: true, numericality: { only_integer: true }
   validates :comment, presence: true, length: { maximum: 200 }
   validates :burned_or_consumed, presence: true

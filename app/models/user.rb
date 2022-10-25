@@ -3,7 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  has_many :calories
+  has_many :calories, dependent: :destroy
   validates_presence_of :name, length: { minimum: 5, maximum: 40 }
   has_one_attached :avatar
   after_commit :add_default_avatar, on: %i[create update]
