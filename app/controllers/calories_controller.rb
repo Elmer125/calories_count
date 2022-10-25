@@ -71,7 +71,7 @@ class CaloriesController < ApplicationController
   end
 
   def correct_user
-    @calories = Calorie.find(params[:id]).user_id == current_user.id
+    @calories = @calory.user_id == current_user.id
     redirect_to calories_path, alert: 'User Not Authorized' unless @calories
   end
 end

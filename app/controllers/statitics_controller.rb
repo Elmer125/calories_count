@@ -3,9 +3,8 @@ class StatiticsController < ApplicationController
   def graph
     id = params[:user_id] || current_user.id
     @user = User.find(id)
-    calories = Calorie.where(user_id: id)
-    @calories_graph = calories.group(:burned_or_consumed).group_by_day(:created_at,
-                                                                       range: 1.month.ago.midnight..Time.now.midnight).sum(:calories_number)
+    calories = Calorie.where(user_id: id).group(:burned_or_consumed)
+    @calories_graph = calories.group_by_day(:created_at).sum(:calories_number)
   end
 
   def new

@@ -7,5 +7,5 @@
 %h2
     = @user.name
 %div
-= line_chart @calories_graph, colors: ["#dc3545","#198754"]
+= line_chart @calories_graph, colors: ["#198754","#dc3545"], xmin:"#{1.month.ago.midnight}", xmax:"#{Time.now}"
 = link_to "share graph", statitics_new_path, class: "btn btn-primary mt-1" if current_user
