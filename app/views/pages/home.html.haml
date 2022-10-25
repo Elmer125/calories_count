@@ -1,6 +1,27 @@
+= video_tag "Corriendo.mp4", autoplay: :autoplay, loop: :loop, muted: :muted, class: "home_video"
 .d-flex.row.mt-5.justify-content-center
   .col-auto.text-center
     %h1
       CaloriesApp
       %i.bi.bi-clipboard2-heart-fill
       %i.bi.bi-universal-access
+.d-flex.row.mt-5.justify-content-center
+  .col-auto.text-center
+    - if current_user
+      %h2 Welcome back #{current_user&.name}!
+    .mt-5.text-white
+      - if current_user
+        %h2
+          track calories
+        = link_to "Go Graph", statitics_path, class: "btn btn-primary btn-lg"
+        .mt-5
+          %h2
+            records your new calorie
+          = link_to "New Calorie", new_calory_path, class: "btn btn-primary btn-lg"
+      - else
+        .mt-5.text-white
+          %h2
+            Would you like track your calories?
+        = link_to "Sign Up", new_user_registration_path, class: "btn btn-primary btn-lg"
+        %span.text-white.mx-2 or
+        = link_to "Log In", new_user_session_path, class: "btn btn-primary btn-lg"

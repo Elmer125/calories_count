@@ -1,18 +1,6 @@
 <% if notice %>
-  <p id="notice" class="notice" style="color: green" ><%= notice %></p>
+  <p id="notice" class="notice alert alert-success" style="color: green" ><%= notice %></p>
 <% elsif alert %>
-  <p id="alert" class="alert" style="color: red"><%= alert %></p>
+  <p id="alert" class="alert alert-danger" style="color: red"><%= alert %></p>
 <% end %>
 
-<%# <script>
-  if (document.getElementById('notice')) {
-    setTimeout(function() {
-      document.getElementById('notice').style.display = 'none';
-    }, 3000);
-  }
- if (document.getElementById('alert')) {
-    setTimeout(function() {
-      document.getElementById('alert').style.display = 'none';
-    }, 3000);
-  }
-</script> %>
