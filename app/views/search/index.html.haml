@@ -3,7 +3,7 @@
 .container.row.row-cols-4
   - @calories.each do |calory|
     %div{:class => "col card text-white #{calory.burned_or_consumed =="burned" ? "bg-success" : "bg-danger"} mb-3 border", :style => "max-width: 18rem;"}
-      .card-header= calory.updated_at.strftime("%F %T")
+      .card-header= calory.updated_at.strftime("%d-%m-%Y %H:%M")
       .card-body
         = render calory
         = link_to "Show this calorie", calory, class:"btn btn-warning"

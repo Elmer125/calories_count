@@ -1,6 +1,9 @@
-﻿<%= search_form_for(@query, url: search_path, method: :get, class:'d-flex') do |f| %>
-    <%= f.search_field :comment_or_date_updated_as_str_i_cont_any,
-    placeholder: "Search...",
-    class:"form-control me-2" %>
-    <%= f.submit "Search!", class:"btn btn-outline-success" %>
+<%= search_form_for(@query, url: search_path, method: :get, class:'d-flex') do |f| %>
+  <%= f.search_field :comment_i_cont_any,
+  placeholder: "Search...",
+  class:"form-control me-2" %>
+  <%= f.date_field :created_at_gteq, class: "form-control me-1"%>
+  <%= f.date_field :created_at_lteq, class: "form-control me-2"%>
+
+  <%= f.submit "Search!", class:"btn btn-outline-success" %>
 <% end %>
