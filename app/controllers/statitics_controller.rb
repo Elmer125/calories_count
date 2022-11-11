@@ -3,8 +3,11 @@ class StatiticsController < ApplicationController
   before_action :validate_token, only: %i[validate graph]
 
   def graph
+    return render_404 if @email_link.blank? && current_user&.id.blank?
+
     id = current_user&.id || @email_link.user_id
     @user = User.find(id)
+    # corregir
     calories = Calorie.where(user_id: id).group(:burned_or_consumed)
     @calories_graph = calories.group_by_day(:created_at).sum(:calories_number)
   end
@@ -34,6 +37,12 @@ class StatiticsController < ApplicationController
   end
 
   private
+
+  def render_404
+    respond_to do |format|
+      format.html { render file: "#{Rails.root}/public/404.html", layout: false, status: :not_found }
+    end
+  end
 
   def validate_token
     @email_link = Statitic.where(token: params[:nt]).where('expires_date > (?)', DateTime.now).first
